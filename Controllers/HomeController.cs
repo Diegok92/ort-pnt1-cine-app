@@ -1,8 +1,8 @@
-﻿using BiblotecaPnt.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Prueba.Models;
 using System.Diagnostics;
 
-namespace BiblotecaPnt.Controllers
+namespace Prueba.Controllers
 {
     public class HomeController : Controller
     {

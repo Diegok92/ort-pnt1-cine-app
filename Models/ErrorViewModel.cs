@@ -1,4 +1,4 @@
-namespace BiblotecaPnt.Models
+namespace Prueba.Models
 {
     public class ErrorViewModel
     {
