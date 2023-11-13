@@ -2618,19 +2618,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\crist\\.nuget\\packages\\": {}
+    "C:\\Users\\Diego\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\crist\\source\\repos\\Prueba\\Prueba\\CineApp.csproj",
+      "projectUniqueName": "C:\\Users\\Diego\\Documents\\Desktop\\ORT\\Proyectos Github\\PNT1\\ort-pnt1-cine-app\\CineApp.csproj",
       "projectName": "CineApp",
-      "projectPath": "C:\\Users\\crist\\source\\repos\\Prueba\\Prueba\\CineApp.csproj",
-      "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\crist\\source\\repos\\Prueba\\Prueba\\obj\\",
+      "projectPath": "C:\\Users\\Diego\\Documents\\Desktop\\ORT\\Proyectos Github\\PNT1\\ort-pnt1-cine-app\\CineApp.csproj",
+      "packagesPath": "C:\\Users\\Diego\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Diego\\Documents\\Desktop\\ORT\\Proyectos Github\\PNT1\\ort-pnt1-cine-app\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Diego\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2684,7 +2684,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
