@@ -2,8 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\Views",
+    "\\Views\\FormReservas",
     "\\Views\\Home",
-    "\\Views\\Images"
+    "\\Views\\Login",
+    "\\Views\\Register",
+    "\\Views\\UpdateUsuario",
+    "\\wwwroot\\lib"
   ],
   "PreviewInSolutionExplorer": false
 }
