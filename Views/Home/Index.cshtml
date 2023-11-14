@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineApp</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            margin: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align:center;
+
+
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        h2{
+            padding-bottom:10px;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cartelera{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .movie {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            width:20%;
+            height: 600px;
+        }
+        .movie-details {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80%;
+            height: 80%;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            opacity: 0;
+            transform: translateY(-100%);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        .movie:hover .movie-details {
+            opacity: 1;
+            transform: translateY(0);
+            display:block;
+        }
+        .movie img {
+            max-width: 100%;
+            max-height: 400px;
+        }
+
+        .poster{
+            width: 250px;
+            
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+        }
+
+            button:hover {
+                background-color: #555;
+            }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>CineApp</h1>
+        <h3>Un lugar para poder reservar entradas en nuestro Cine</h3>
+        <h6>Proyecto para la Materia Programacion en Nuevas Tecnologias - ORT</h6>
+    </header>
+
+    <section>
+        <h2>Ingrese para reservar su lugar!</h2>
+        <form id="form-login">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Ingresar</button>
+        </form>
+    </section>
+   
+    <h2>Cartelera</h2>
+    <h4>Pase el mouse por los poster para ver las sinopsis!</h4>
+    <section class="cartelera">
+        <div class="movie">
+            <h2>The Marvels</h2>
+            <img class="poster" src="\Views\Home\Images\PosterMarvels.jpg" alt="The Marvels">
+            <p>Fecha de estreno: 10/11/23</p>
+            <p>Clasificacion: PG-13</p>
+            <div class="movie-details" id="marvels-details">
+                <p>Carol Danvers, alias Capitana Marvel, ha recuperado su identidad de los tiranicos Kree y se ha vengado de la Inteligencia Suprema. Pero las consecuencias imprevistas hacen que Carol cargue con el peso de un universo desestabilizado. Cuando sus deberes la envian a un agujero de gusano anomalo vinculado a un revolucionario Kree, sus poderes se enredan con los de la superfan oriunda de la ciudad de Jersey, Kamala Khan, alias Ms. Marvel, y la sobrina distanciada de Carol, la ahora astronauta de S.A.B.E.R., la Capitana Monica Rambeau. Juntos, este trio improbable debera formar equipo y aprender a trabajar en conjunto para salvar el universo como THE MARVELS.</p>
+            </div>
+        </div>
+
+        <div class="movie">
+            <h2>Napoleon</h2>
+            <img class="poster" src="Images/PosterNapoleon.jpg" alt="Napoleon">
+            <p>Fecha de estreno: 22/11/23<p>
+            <p>Clasificacion: PG-16</p>
+            <div class="movie-details" id="napoleon-details">
+                <p>Napoleon es una epopeya de accion llena de espectaculo que detalla el accidentado ascenso y caida del emblematico emperador frances Napoleon Bonaparte, interpretado por el ganador al Oscar, Joaquin Phoenix. Con un impresionante escenario cinematografico a gran escala orquestado por el legendario director Ridley Scott, la pelicula capta la implacable travesia de Bonaparte hacia el poder a traves del prisma de su adictiva y volatil relacion con su unico y verdadero amor, Josefina, mostrando sus visionarias tacticas militares y politicas plasmadas en algunas de las secuencias de batalla mas dinamicas y realistas jamas filmadas.</p>
+            </div>
+        </div>
+
+        <div class="movie">
+            <h2>El Exorcista: Creyentes</h2>
+            <img class="poster" src="Images/PosterExorcist.jpg" alt="El Exorcista: Creyentes">
+            <p>Fecha de estreno: 05/10/23<p>
+            <p>Clasificacion: PG-13</p>
+            <div class="movie-details" id="exorcista-details">
+                <p>Desde la muerte de su esposa embarazada en un terremoto en Haiti hace una decada, Victor Fielding (ganador del Tony y nominado a los Premios de la Academia, Leslie Odom Jr.; Una noche en Miami y Hamilton) ha criado a su hija Angela (Lidya Jewett; Chicas buenas) por su cuenta. Pero cuando Angela y su amiga Katherine (la recien llegada Olivia Marcum) desaparecen en el bosque y regresan despues de tres dias sin ningun recuerdo de lo que les ocurrio, se desencadena una serie de eventos que obligaran a Victor a enfrentarse a lo peor del mal, aterrorizado y desesperado, buscara a la unica persona que ha presenciado algo similar antes: Chris MacNeil. Por primera vez desde la pelicula de 1973, la ganadora de los Premios de la Academia Ellen Burstyn retoma su iconico papel como Chris MacNeil, una actriz que ha quedado marcada por siempre con lo que le sucedio a su hija Regan hace cinco decadas..</p>
+            </div>
+        </div>
+
+        <div class="movie">
+            <h2>El Justiciero 3</h2>
+            <img class="poster" src="Images/PosterEqualizer3.jpg" alt="El Justiciero 3">
+            <p>Fecha de estreno: 21/09/23<p>
+            <p>Clasificacion: PG-16</p>
+            <div class="movie-details" id="justiciero3-details">
+                <p>EL JUSTICIERO: CAP�TULO FINAL. Desde que renunci� a su vida como asesino del gobierno, Robert McCall (Denzel Washington) ha luchado por reconciliarse con las horribles cosas que hizo en el pasado y encuentra un extra�o consuelo en servir a la justicia en nombre de los oprimidos. Encontr�ndose sorpresivamente en su casa en el sur de Italia, descubre que sus nuevos amigos est�n bajo el control de los jefes del crimen local. Cuando los acontecimientos se tornan mortales, McCall sabe lo que tiene que hacer: convertirse en el protector de sus amigos enfrent�ndose a la mafia.</p>
+            </div>
+        </div>
+
+        <div class="movie">
+            <h2>Los juegos del Hambre: La Balada de Pajaros Cantores y Serpientes</h2>
+            <img class="poster" src="Images/PosterHungerGames.jpg" alt="Los juegos del Hambre: La Balada de Pajaros Cantores y Serpientes">
+            <p>Fecha de estreno: 05/10/23<p>
+            <p>Clasificacion: PG-13</p>
+            <div class="movie-details" id="juegoHambre-details">
+                <p>LOS JUEGOS DEL HAMBRE LA BALADA DE PAJAROS CANTORES Y SERPIENTES. Es el dia de la cosecha de la decima edicion de Los juegos del hambre y, un joven Corolianus Snow, se prepara para una ocasion muy especial: alcanzar la gloria como mentor de los Juegos. La familia Snow atraviesa una epoca dificil y su destino depende de que el joven supere en ingenio y estrategia a sus compatriotas como mentor del tributo que le sea adjudicado. Pero, todo parece estar en su contra cuando le humillan asignandole a la tributo del Distrito 12, Lucy Gray Baird, a la que estara irremediablemente unido.</p>
+            </div>
+        </div>
+
+        <div class="movie">
+            <h2>Atentado en el Aire</h2>
+            <img class="poster" src="Images/Poster97minutes.jpg" alt="atentado en el aire">
+            <p>Fecha de estreno: 09/11/23<p>
+            <p>Clasificacion: PG-13</p>
+            <div class="movie-details" id="atentadoAire-details">
+                <p>Un 767 secuestrado se estrellar� en s�lo 97 minutos cuando se le acabe el combustible. Contra la fuerte voluntad del vice director de la NSA Toyin, el director de la NSA, Hawkins, se prepara para derribar el avi�n antes de que cause da�os catastr�ficos en tierra, dejando el destino de los pasajeros inocentes en manos de Alex, un agente encubierto de Interpol que ha sido incorporado en la c�lula terrorista.</p>
+            </div>
+        </div>
+
+        <div class="movie">
+            <h2>Trolls 3</h2>
+            <img class="poster" src="Images/Postertrolls3.jpg" alt="trolls 3">
+            <p>Fecha de estreno: 17/11/23<p>
+            <p>Clasificacion: ATP</p>
+            <div class="movie-details" id="trolls3-details">
+                <p>Despu�s de dos pel�culas de verdadera amistad y constante coqueteo, Poppy (Anna Kendrick) y Ram�n (Justin Timberlake) son ahora oficialmente, y por fin, �una pareja! A medida que se conocen m�s, Poppy descubre que Ram�n tiene un pasado secreto. En el pasado fue parte de su boyband favorita, BroZone, con sus cuatro hermanos: Floyd (Troye Sivan, la sensaci�n del electropop nominado al Globo de Oro) John Dory (Eric Andr�; Sing 2: �Ven y canta de nuevo!), Spruce (Daveed Diggs, ganador del Grammy; Hamilton) y Clay (Kid Cudi, ganador del Grammy; No mires arriba). BroZone se desintegr� cuando Ram�n apenas era un ni�o, y al igual que su familia, no ha vuelto a ver a sus hermanos desde entonces. Pero cuando Floyd, el hermano de Ram�n, es secuestrado por sus talentos musicales por un par de unos malvados villanos pop-stars - Velvet (Amy Schumer, ganadora del Emmy; Esta chica es un desastre) y Veneer (Andrew Rannells, ganador del Grammy y nominado al Tony; The Book of Mormon) - Ram�n y Poppy se embarcan en un viaje estremecedor y emocional para reunir a los otros hermanos y as� rescatar a Floyd, de un destino a�n peor, que el olvido de la cultura pop.</p>
+            </div>
+        </div>
+
+        <div class="movie">
+            <h2>Asesinos de la Luna</h2>
+            <img class="poster" src="Images/PosterAsesinosLuna.jpg" alt="Asesinos de la Luna">
+            <p>Fecha de estreno: 20/10/23<p>
+            <p>Clasificacion: PG-16</p>
+            <div class="movie-details" id="asesinosLuna-details">
+                <p>Basada en el elogiado bestseller de David Grann, "Killers of the Flower Moon" est� ambientada en la d�cada de 1920 en Oklahoma y cuenta la historia de los asesinatos en serie de miembros de la Naci�n Osage, un pueblo originario rico en petr�leo. Una serie de cr�menes brutales que llegaron a conocerse como el Reino del terror.</p>
+            </div>
+        </div>
+  
+
+    </section>
+
+
+    <footer>
+        <p>&copy; 2023 CineApp. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleDetails(detailsId) {
+            const details = document.getElementById(detailsId);
+            details.style.display = details.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+    
+</body>
+
+</html>

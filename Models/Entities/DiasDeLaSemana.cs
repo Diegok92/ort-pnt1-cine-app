@@ -1,4 +1,4 @@
-﻿namespace BiblotecaPnt.Models.Entities
+﻿namespace CineApp.Models.Entities
 {
     public enum DiasDeLaSemana
     {

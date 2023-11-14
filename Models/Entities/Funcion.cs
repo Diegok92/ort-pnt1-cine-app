@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.ComponentModel.DataAnnotations;
-namespace BiblotecaPnt.Models.Entities
+namespace CineApp.Models.Entities
 {
     public class Funcion
     {

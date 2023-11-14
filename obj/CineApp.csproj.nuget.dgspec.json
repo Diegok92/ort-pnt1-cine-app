@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Diego\\Documents\\Desktop\\ORT\\Proyectos Github\\PNT1\\ort-pnt1-cine-app\\CineApp.csproj": {}
+    "C:\\Users\\crist\\OneDrive\\Escritorio\\Facultad\\TP PNT1\\ort-pnt1-cine-app\\CineApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Diego\\Documents\\Desktop\\ORT\\Proyectos Github\\PNT1\\ort-pnt1-cine-app\\CineApp.csproj": {
+    "C:\\Users\\crist\\OneDrive\\Escritorio\\Facultad\\TP PNT1\\ort-pnt1-cine-app\\CineApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Diego\\Documents\\Desktop\\ORT\\Proyectos Github\\PNT1\\ort-pnt1-cine-app\\CineApp.csproj",
+        "projectUniqueName": "C:\\Users\\crist\\OneDrive\\Escritorio\\Facultad\\TP PNT1\\ort-pnt1-cine-app\\CineApp.csproj",
         "projectName": "CineApp",
-        "projectPath": "C:\\Users\\Diego\\Documents\\Desktop\\ORT\\Proyectos Github\\PNT1\\ort-pnt1-cine-app\\CineApp.csproj",
-        "packagesPath": "C:\\Users\\Diego\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Diego\\Documents\\Desktop\\ORT\\Proyectos Github\\PNT1\\ort-pnt1-cine-app\\obj\\",
+        "projectPath": "C:\\Users\\crist\\OneDrive\\Escritorio\\Facultad\\TP PNT1\\ort-pnt1-cine-app\\CineApp.csproj",
+        "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\crist\\OneDrive\\Escritorio\\Facultad\\TP PNT1\\ort-pnt1-cine-app\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Diego\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -47,6 +47,12 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.13, )"
             }
           },
           "imports": [
@@ -68,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -7,8 +7,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\FormReservas\formReservas.cshtml" />
+    <Content Remove="Views\Register\register.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Home\Images\PosterMarvels.jpg" />
+    <None Remove="Views\Home\Images\PosterTrolls3.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Views\Home\Images\PosterTrolls3.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.13">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\Actividades\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\FormReservas\formReservas.cshtml" />
+    <None Include="Views\Register\Register.cshtml" />
   </ItemGroup>
 
 </Project>

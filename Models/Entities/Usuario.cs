@@ -1,10 +1,14 @@
-﻿namespace BiblotecaPnt.Models.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CineApp.Models.Entities
 {
-    public class Usuario : Persona
+    public class Usuario 
+
     {
-        public String Nombre { get; set; }
-        public String Apellido { get; set; }
-        public List<Reserva> ListaReservas { get; set; }
+        [Key] public required int IdUsuario { get; set; }
+        [StringLength(30)] public required string Email { get; set; }
+        [StringLength(30)] public required string Contraseña { get; set; }
+        //public List<Reserva> ListaReservas { get; set; }  
         
     }
 }

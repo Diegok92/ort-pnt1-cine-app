@@ -1,4 +1,4 @@
-namespace Prueba.Models
+namespace CineApp.Models
 {
     public class ErrorViewModel
     {

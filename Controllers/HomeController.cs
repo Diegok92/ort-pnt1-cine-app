@@ -1,12 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Prueba.Models;
+﻿using CineApp.Models;
+using CineApp.Models.Actividades;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Prueba.Controllers
+
+using CineApp.Models.Entities;
+using CineApp.Persistencia;
+
+namespace CineApp.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+
+        private Usuario_Persistencia controladorUsuarios = new Usuario_Persistencia();
+        
+
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -14,7 +23,7 @@ namespace Prueba.Controllers
         }
 
         public IActionResult Index()
-        {
+        {   
             return View();
         }
 
