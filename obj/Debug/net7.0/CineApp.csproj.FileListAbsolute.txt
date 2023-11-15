@@ -134,12 +134,12 @@ C:\Users\crist\OneDrive\Escritorio\Facultad\TP PNT1\ort-pnt1-cine-app\obj\Debug\
 C:\Users\crist\OneDrive\Escritorio\Facultad\TP PNT1\ort-pnt1-cine-app\obj\Debug\net7.0\staticwebassets.pack.json
 C:\Users\crist\OneDrive\Escritorio\Facultad\TP PNT1\ort-pnt1-cine-app\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\crist\OneDrive\Escritorio\Facultad\TP PNT1\ort-pnt1-cine-app\obj\Debug\net7.0\staticwebassets.development.json
-C:\Users\crist\OneDrive\Escritorio\Facultad\TP PNT1\ort-pnt1-cine-app\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\crist\OneDrive\Escritorio\Facultad\TP PNT1\ort-pnt1-cine-app\obj\Debug\net7.0\scopedcss\bundle\CineApp.styles.css
-C:\Users\crist\OneDrive\Escritorio\Facultad\TP PNT1\ort-pnt1-cine-app\obj\Debug\net7.0\scopedcss\projectbundle\CineApp.bundle.scp.css
 C:\Users\crist\OneDrive\Escritorio\Facultad\TP PNT1\ort-pnt1-cine-app\obj\Debug\net7.0\CineApp.csproj.CopyComplete
 C:\Users\crist\OneDrive\Escritorio\Facultad\TP PNT1\ort-pnt1-cine-app\obj\Debug\net7.0\CineApp.dll
 C:\Users\crist\OneDrive\Escritorio\Facultad\TP PNT1\ort-pnt1-cine-app\obj\Debug\net7.0\refint\CineApp.dll
 C:\Users\crist\OneDrive\Escritorio\Facultad\TP PNT1\ort-pnt1-cine-app\obj\Debug\net7.0\CineApp.pdb
 C:\Users\crist\OneDrive\Escritorio\Facultad\TP PNT1\ort-pnt1-cine-app\obj\Debug\net7.0\CineApp.genruntimeconfig.cache
 C:\Users\crist\OneDrive\Escritorio\Facultad\TP PNT1\ort-pnt1-cine-app\obj\Debug\net7.0\ref\CineApp.dll
+C:\Users\crist\OneDrive\Escritorio\Facultad\TP PNT1\ort-pnt1-cine-app\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\crist\OneDrive\Escritorio\Facultad\TP PNT1\ort-pnt1-cine-app\obj\Debug\net7.0\scopedcss\projectbundle\CineApp.bundle.scp.css

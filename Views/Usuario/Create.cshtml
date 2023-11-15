@@ -1,5 +1,4 @@
 @model CineApp.Models.Entities.Usuario
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -30,6 +29,10 @@
             padding: 1em;
         }
 
+        h2 {
+            padding-bottom: 10px;
+        }
+
         section {
             margin: 20px;
             padding: 20px;
@@ -37,20 +40,48 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
+        .cartelera {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
         .movie {
             margin-bottom: 20px;
             padding: 20px;
             border: 1px solid #ddd;
             background-color: #f9f9f9;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            width: 20%;
+            height: 600px;
         }
 
         .movie-details {
             display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80%;
+            height: 80%;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            opacity: 0;
+            transform: translateY(-100%);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .movie:hover .movie-details {
+            opacity: 1;
+            transform: translateY(0);
+            display: block;
         }
 
         .movie img {
             max-width: 100%;
-            height: auto;
+            max-height: 400px;
         }
 
         .poster {
@@ -72,7 +103,14 @@
         input {
             padding: 8px;
             margin-bottom: 16px;
-            width: 60%;
+
+        }
+
+        .boton {
+            padding: 8px;
+            margin-bottom: 16px;
+            background-color: #333;
+            color: #fff;
         }
 
         button {
@@ -81,6 +119,7 @@
             padding: 10px;
             cursor: pointer;
             border: none;
+            margin: 10px;
         }
 
             button:hover {
@@ -107,11 +146,11 @@
 
     <section>
         <h2>Registro de Usuario</h2>
-        <form asp-action = "Create" method = "post" id="form-register">
+        <form asp-action="Create" method="post" id="form-register">
 
             <label for="idUsuario">idUsuario:</label>
             <input name="idUsuario" required>
-             
+
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
 
@@ -121,8 +160,8 @@
             <label for="confirmPassword">Confirmar Contraseña:</label>
             <input type="password" id="confirmPassword" name="confirmPassword" required>
 
-            
-            <input type="submit" value = "Create" class = "btn btn-primary"/>
+
+            <input class="boton" type="submit" value="Create"  />
         </form>
     </section>
     <footer>
@@ -132,4 +171,3 @@
 </body>
 
 </html>
-

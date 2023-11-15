@@ -17,11 +17,9 @@ namespace CineApp.Controllers
         }
 
         // GET: Usuarios
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return _context.Usuarios != null ?
-                        View(await _context.Usuarios.ToListAsync()) :
-                        Problem("Entity set 'CineDBContext.Usuario'  is null.");
+            return View(_context.Usuarios.ToList());
         }
 
         // GET: Usuarios/Details/5
@@ -65,14 +63,14 @@ namespace CineApp.Controllers
         }
 
         // GET: Usuarios/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Edit(int? id)
         {
             if (id == null || _context.Usuarios == null)
             {
                 return NotFound();
             }
 
-            var usuario = await _context.Usuarios.FindAsync(id);
+            var usuario = _context.Usuarios.Find(id);
             if (usuario == null)
             {
                 return NotFound();
@@ -85,7 +83,7 @@ namespace CineApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Contraseña")] Usuario usuario)
+        public IActionResult Edit(int id, [Bind("IdUsuario,Email,Contraseña")] Usuario usuario)
         {
             if (id != usuario.IdUsuario)
             {
@@ -96,8 +94,19 @@ namespace CineApp.Controllers
             {
                 try
                 {
-                    _context.Update(usuario);
-                    await _context.SaveChangesAsync();
+                    var personaEnDb = _context.Usuarios.Find(id);
+                    if (personaEnDb != null)
+                    {
+                        personaEnDb.Email = usuario.Email;
+
+
+                        _context.Usuarios.Update(personaEnDb);
+                        _context.SaveChanges();
+                    }
+                    else
+                    {
+                        return NotFound();
+                    }
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -116,15 +125,15 @@ namespace CineApp.Controllers
         }
 
         // GET: Usuarios/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public IActionResult Delete(int? id)
         {
             if (id == null || _context.Usuarios == null)
             {
                 return NotFound();
             }
 
-            var usuario = await _context.Usuarios
-                .FirstOrDefaultAsync(m => m.IdUsuario == id);
+            var usuario = _context.Usuarios.Find(id);
+
             if (usuario == null)
             {
                 return NotFound();
@@ -136,19 +145,20 @@ namespace CineApp.Controllers
         // POST: Usuarios/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public IActionResult DeleteConfirmed(int id)
         {
             if (_context.Usuarios == null)
             {
                 return Problem("Entity set 'CineDBContext.Usuario'  is null.");
             }
-            var usuario = await _context.Usuarios.FindAsync(id);
+            var usuario = _context.Usuarios.Find(id);
             if (usuario != null)
             {
                 _context.Usuarios.Remove(usuario);
+                _context.SaveChanges();
             }
 
-            await _context.SaveChangesAsync();
+
             return RedirectToAction(nameof(Index));
         }
 
