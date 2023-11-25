@@ -167,7 +167,7 @@ namespace CineApp.Controllers
         }
         private bool PeliculaExistByName(string nombre)
         {
-            return (_context.Peliculas?.Any(e => e.Nombre == nombre)).GetValueOrDefault();
+            return (_context.Peliculas?.Any(e => e.NombrePelicula == nombre)).GetValueOrDefault();
         }
 
         //Usuario/Delete2/idUs

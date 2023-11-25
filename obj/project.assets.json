@@ -2890,11 +2890,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\crist\\OneDrive\\Escritorio\\Facultad\\TP PNT1\\ort-pnt1-cine-app\\CineApp.csproj",
+      "projectUniqueName": "C:\\Users\\crist\\OneDrive\\Escritorio\\Facultad\\TP PNT1\\TPactualizado\\ort-pnt1-cine-app\\CineApp.csproj",
       "projectName": "CineApp",
-      "projectPath": "C:\\Users\\crist\\OneDrive\\Escritorio\\Facultad\\TP PNT1\\ort-pnt1-cine-app\\CineApp.csproj",
+      "projectPath": "C:\\Users\\crist\\OneDrive\\Escritorio\\Facultad\\TP PNT1\\TPactualizado\\ort-pnt1-cine-app\\CineApp.csproj",
       "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\crist\\OneDrive\\Escritorio\\Facultad\\TP PNT1\\ort-pnt1-cine-app\\obj\\",
+      "outputPath": "C:\\Users\\crist\\OneDrive\\Escritorio\\Facultad\\TP PNT1\\TPactualizado\\ort-pnt1-cine-app\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",

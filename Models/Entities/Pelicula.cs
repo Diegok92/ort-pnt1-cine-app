@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography;
+
 namespace CineApp.Models.Entities
 {
     public class Pelicula
@@ -7,11 +9,17 @@ namespace CineApp.Models.Entities
         public int IdPelicula { get; set; }
 
         [StringLength(50)]
-        public String Nombre { get; set; }
+        public string NombrePelicula { get; set; }
         public double DuracionEnMin { get; set; }
-        public DateTime FechaEstreno { get; set; }
+        public string Descripcion { get; set; }
 
-        public String Descripcion { get; set; }
-        
+
+        public override string ToString()
+        {
+            return $"{NombrePelicula}";
+        }
+
+
+
     }
 }

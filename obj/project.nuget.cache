@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rDrQpPCczpkezP3ajEsZb/zyvUesHaozhUGUkM8/GjUqpsrezUeu/Rz9KsZL/N1ZJqW8kpfrYjfoDnUP6+qVAA==",
+  "dgSpecHash": "Sl6NUt7RKqEiRAXxqQL3EK2ZqYjALY9sxLtABBh6Jhpb/P3niiXmrMf7OLqyv8/a+DBkIGlAUrdtCVHGQcqD+A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\crist\\OneDrive\\Escritorio\\Facultad\\TP PNT1\\ort-pnt1-cine-app\\CineApp.csproj",
+  "projectFilePath": "C:\\Users\\crist\\OneDrive\\Escritorio\\Facultad\\TP PNT1\\TPactualizado\\ort-pnt1-cine-app\\CineApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\crist\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

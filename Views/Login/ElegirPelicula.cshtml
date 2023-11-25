@@ -1,0 +1,175 @@
+﻿@model CineApp.Models.Entities.Pelicula
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineApp</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            margin: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        h2 {
+            padding-bottom: 10px;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cartelera {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .movie {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            width: 20%;
+            height: 600px;
+        }
+
+        .movie-details {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80%;
+            height: 80%;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            opacity: 0;
+            transform: translateY(-100%);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .movie:hover .movie-details {
+            opacity: 1;
+            transform: translateY(0);
+            display: block;
+        }
+
+        .movie img {
+            max-width: 100%;
+            max-height: 400px;
+        }
+
+        .poster {
+            width: 250px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+        }
+
+            button:hover {
+                background-color: #555;
+            }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>CineApp</h1>
+        <h3>Un lugar para poder reservar entradas en nuestro Cine</h3>
+        <h6>Proyecto para la Materia Programacion en Nuevas Tecnologias - ORT</h6>
+    </header>
+
+    <section>
+        <h2>Lista de peliculas disponibles</h2>
+        <form asp-action="ElegirPelicula" method="post" id="form-login">
+            <label for="NombrePelicula" style="display: none;">NombrePelicula:</label>
+            <input name="NombrePelicula" required style="display: none;">
+
+            <!-- En algún lugar de tu vista -->
+            <select id="selectPeliculas" asp-items="@ViewBag.Peliculas"></select>
+
+            <input class="boton" type="submit" value="Seleccionar Pelicula"  />
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 CineApp. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener referencia al elemento select y al campo de entrada
+            var selectPeliculas = document.getElementById('selectPeliculas');
+            var inputNombrePelicula = document.querySelector('input[name="NombrePelicula"]');
+
+            // Agregar un evento de cambio al elemento select
+            selectPeliculas.addEventListener('change', function () {
+                // Actualizar el valor del campo NombrePelicula con el valor seleccionado del select
+                inputNombrePelicula.value = selectPeliculas.value;
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>
+
+
