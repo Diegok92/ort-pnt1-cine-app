@@ -6,38 +6,37 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CineApp.Controllers
 {
-    public class UsuarioController : Controller
+    public class ReservaController : Controller
     {
-     
         private readonly CineDBContext _context;
 
-        public UsuarioController(CineDBContext context)
+        public ReservaController(CineDBContext context)
         {
             _context = context;
         }
 
         // GET: Usuarios
-         public IActionResult Index()
+        public IActionResult Index()
         {
-            return View(_context.Usuarios.ToList());
+            return View();
         }
 
         // GET: Usuarios/Details/5
-        public async Task<IActionResult> Details(int? id)
+        [HttpGet]
+        public IActionResult Details(int? id)
         {
-            if (id == null || _context.Usuarios == null)
+            if (id == null || _context.Reservas == null)
             {
                 return NotFound();
             }
 
-            var usuario = await _context.Usuarios
-                .FirstOrDefaultAsync(m => m.IdUsuario == id);
-            if (usuario == null)
+            var Reserva =  _context.Reservas.Find(id);
+            if (Reserva == null)
             {
                 return NotFound();
             }
 
-            return View(usuario);
+            return View(Reserva);
         }
 
         // GET: Usuarios/Create
@@ -51,31 +50,31 @@ namespace CineApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdUsuario,Email,Contraseña")] Usuario usuario)
+        public IActionResult Create([Bind("EmailCliente,IdFuncion,CantidadEntradas")] Reserva  reserva)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(usuario);
-                await _context.SaveChangesAsync();
+                _context.Reservas.Add(reserva);
+                 _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
-            return View(usuario);
+            return View(reserva);
         }
 
         // GET: Usuarios/Edit/5
         public IActionResult Edit(int? id)
         {
-            if (id == null || _context.Usuarios == null)
+            if (id == null || _context.Reservas == null)
             {
                 return NotFound();
             }
 
-            var usuario = _context.Usuarios.Find(id);
-            if (usuario == null)
+            var reserva = _context.Reservas.Find(id);
+            if (reserva == null)
             {
                 return NotFound();
             }
-            return View(usuario);
+            return View(reserva);
         }
 
         // POST: Usuarios/Edit/5
@@ -83,9 +82,9 @@ namespace CineApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("IdUsuario,Email,Contraseña")] Usuario usuario)
+        public IActionResult Edit(int id, [Bind("EmailCliente,IdFuncion,CantidadEntradas")] Reserva reserva)
         {
-            if (id != usuario.IdUsuario)
+            if (id != reserva.IdReserva)
             {
                 return NotFound();
             }
@@ -94,13 +93,13 @@ namespace CineApp.Controllers
             {
                 try
                 {
-                    var personaEnDb = _context.Usuarios.Find(id);
-                    if (personaEnDb != null)
+                    var reservaEnDb = _context.Reservas.Find(id);
+                    if (reservaEnDb != null)
                     {
-                        personaEnDb.Email = usuario.Email;
+                        reservaEnDb.CantidadEntradas = reserva.CantidadEntradas;
 
 
-                        _context.Usuarios.Update(personaEnDb);
+                        _context.Reservas.Update(reservaEnDb);
                         _context.SaveChanges();
                     }
                     else
@@ -110,7 +109,7 @@ namespace CineApp.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!UsuarioExists(usuario.IdUsuario))
+                    if (!ReservaExists(reserva.IdReserva))
                     {
                         return NotFound();
                     }
@@ -119,27 +118,27 @@ namespace CineApp.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Details));
             }
-            return View(usuario);
+            return View(reserva);
         }
 
-        // GET: Usuarios/Delete/5
+        // GET: Usuario/Delete/5
         public IActionResult Delete(int? id)
         {
-            if (id == null || _context.Usuarios == null)
+            if (id == null || _context.Reservas == null)
             {
                 return NotFound();
             }
 
-            var usuario = _context.Usuarios.Find(id);
+            var reserva = _context.Reservas.Find(id);
 
-            if (usuario == null)
+            if (reserva == null)
             {
                 return NotFound();
             }
 
-            return View(usuario);
+            return View(reserva);
         }
 
         // POST: Usuarios/Delete/5
@@ -147,14 +146,14 @@ namespace CineApp.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-            if (_context.Usuarios == null)
+            if (_context.Reservas == null)
             {
                 return Problem("Entity set 'CineDBContext.Usuario'  is null.");
             }
-            var usuario = _context.Usuarios.Find(id);
-            if (usuario != null)
+            var reserva = _context.Reservas.Find(id);
+            if (reserva != null)
             {
-                _context.Usuarios.Remove(usuario);
+                _context.Reservas.Remove(reserva);
                 _context.SaveChanges();
             }
 
@@ -162,9 +161,34 @@ namespace CineApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool UsuarioExists(int id)
+        private bool ReservaExists(int id)
         {
-            return (_context.Usuarios?.Any(e => e.IdUsuario == id)).GetValueOrDefault();
+            return (_context.Reservas?.Any(e => e.IdReserva == id)).GetValueOrDefault();
         }
+        private bool ReservaExistsByEmail(string email)
+        {
+            return (_context.Reservas?.Any(e => e.EmailCliente == email)).GetValueOrDefault();
+        }
+
+        //Usuario/Delete2/idUs
+        public async Task<IActionResult> Delete2([Bind("Email")] Usuario usuario)
+        {
+
+
+            var usuario2 = await _context.Usuarios
+                .FirstOrDefaultAsync(m => m.Email == usuario.Email);
+            if (usuario2 != null)
+            {
+                return DeleteConfirmed(usuario2.IdUsuario);
+            }
+            else
+            {
+                return NotFound();
+            }
+
+
+        }
+
     }
 }
+

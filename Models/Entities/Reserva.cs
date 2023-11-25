@@ -6,10 +6,16 @@ namespace CineApp.Models.Entities
         [Key]
         public int IdReserva { get; set; }
        
-        public String EmailCliente { get; set; }
+        public string EmailCliente { get; set; }
         public int IdFuncion { get; set; }
         public int CantidadEntradas { get; set; }
-        public List<Butaca> ListaButacasElegidas { get; set; }
+
+
+        public int ButacasVendidas { get; set; }
+        public int ButacasTotales { get; set; }
+        public string Dia { get; set; }
+        public string Horario { get; set; }
+
 
     }
 }

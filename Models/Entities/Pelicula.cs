@@ -4,12 +4,14 @@ namespace CineApp.Models.Entities
     public class Pelicula
     {
         [Key]
-        public int idPelicula { get; set; }
+        public int IdPelicula { get; set; }
 
         [StringLength(50)]
-        public String nombre { get; set; }
-        public double duracionEnMin { get; set; }
-        public DateTime fechaEstreno { get; set; }
+        public String Nombre { get; set; }
+        public double DuracionEnMin { get; set; }
+        public DateTime FechaEstreno { get; set; }
+
+        public String Descripcion { get; set; }
         
     }
 }
