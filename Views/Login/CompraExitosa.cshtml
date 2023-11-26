@@ -1,9 +1,9 @@
-@model CineApp.Models.Entities.Usuario
+﻿
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CineApp</title>
     <style>
@@ -103,14 +103,6 @@
         input {
             padding: 8px;
             margin-bottom: 16px;
-
-        }
-
-        .boton {
-            padding: 8px;
-            margin-bottom: 16px;
-            background-color: #333;
-            color: #fff;
         }
 
         button {
@@ -119,7 +111,6 @@
             padding: 10px;
             cursor: pointer;
             border: none;
-            margin: 10px;
         }
 
             button:hover {
@@ -145,25 +136,19 @@
     </header>
 
     <section>
-        <h2>Registro de Usuario</h2>
-        <form asp-action="Create" method="post" id="form-register">
+        <h2>Compra Exitosa !!</h2>
+        <button onclick="irAUrl()">Volver al Inicio</button>
 
-            <label for="idUsuario">idUsuario:</label>
-            <input name="idUsuario" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="Contraseña">Contraseña:</label>
-            <input type="password" id="password" name="Contraseña" required>
-
-            <label for="confirmPassword">Confirmar Contraseña:</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" required>
-
-
-            <input class="boton" type="submit" value="Create"  />
-        </form>
+    <script>
+        function irAUrl() {
+            
+            var url = 'https://www.ejemplo.com';
+            window.location.href = url;
+        }
+    </script>
+        
     </section>
+
     <footer>
         <p>&copy; 2023 CineApp. Todos los derechos reservados.</p>
     </footer>

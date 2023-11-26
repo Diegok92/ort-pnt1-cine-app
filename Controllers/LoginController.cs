@@ -4,12 +4,13 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-
+using System.Runtime.ConstrainedExecution;
 
 namespace CineApp.Controllers
 {
     public class LoginController : Controller
     {
+        public static string MARVELS = "The Marvels";
 
         private readonly CineDBContext _context;
 
@@ -62,22 +63,64 @@ namespace CineApp.Controllers
         [HttpPost]
         public IActionResult ElegirPelicula([Bind("NombrePelicula")] Pelicula pelicula)
         {
-
             ViewBag.Peliculas = new SelectList(_context.Peliculas);
-            if(pelicula.NombrePelicula.Equals("Spiderman"))
+            if(pelicula.NombrePelicula.Equals(MARVELS))
             {
-                return RedirectToAction("ReservarSpiderman");
+                return RedirectToAction("ReservarMarvels");
             }
             return View();
         }
 
         [HttpGet]
-        public IActionResult ReservarSpiderman()
+        public IActionResult ReservarMarvels()
         {
-
-        
-
+            List<Funcion> listaFiltrada = filtrarFuncionesSegunNombrePelicula(MARVELS, _context.Funciones.ToList());
+            ViewBag.Funciones = new SelectList(listaFiltrada);
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult ReservarMarvels(int cantEntradas,[Bind("IdFuncion")] Funcion funcion)
+        {
+                Funcion? funcionElegida = _context.Funciones.Find(funcion.IdFuncion);
+                if (funcionElegida.quedanEntradasSuficientes(cantEntradas))
+                {
+                    funcionElegida.venderEntradas(cantEntradas);
+                    _context.Funciones.Update(funcionElegida);
+                    _context.SaveChanges();
+                    return RedirectToAction("CompraExitosa");
+                }
+                else
+                {
+                    return RedirectToAction("CompraFallida");
+                }
+        }
+
+        public IActionResult CompraExitosa()
+        {
+            return View();
+        }
+        public IActionResult CompraFallida()
+        {
+            return View();
+        }
+        private Funcion? buscarFuncionPorId(int id)
+        {
+            return _context.Funciones.Find(id);
+
+        }
+        private List<Funcion> filtrarFuncionesSegunNombrePelicula(string nombre, List<Funcion> listaOrig)
+        {
+            List<Funcion> nuevaLista = new List<Funcion>();
+            foreach (Funcion funcActual in listaOrig)
+            {
+                if (funcActual.mismoNombrePelicula(nombre))
+                {
+                    nuevaLista.Add(funcActual);
+                }
+            }
+            return nuevaLista;
+
         }
 
 

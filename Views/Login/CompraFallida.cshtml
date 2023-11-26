@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -110,7 +111,6 @@
             padding: 10px;
             cursor: pointer;
             border: none;
-            margin: 10px;
         }
 
             button:hover {
@@ -136,35 +136,22 @@
     </header>
 
     <section>
-        <h2>Modificación de Datos</h2>
-        <form asp-action="Edit" id="form-update">
+        <h2>Compra Fallida !! -> Compraste mas entradas de las disponibles !</h2>
+        <button onclick="irAUrl()">Volver al Inicio</button>
 
-
-            <label for="idUsuario">ID Usuario:</label>
-            <input  id="idUsuario" name="idUsuario" required>
-
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="contraseña">Contraseña:</label>
-            <input type="password" id="contraseña" name="contraseña" required>
-
-            <button type="submit" value="Save">Modificar</button>
+    <script>
+        function irAUrl() {
             
-        </form>
+            var url = 'https://www.ejemplo.com';
+            window.location.href = url;
+        }
+    </script>
+        
     </section>
 
     <footer>
         <p>&copy; 2023 CineApp. Todos los derechos reservados.</p>
     </footer>
-
-    <script>
-        function toggleDetails(detailsId) {
-            const details = document.getElementById(detailsId);
-            details.style.display = details.style.display === 'none' ? 'block' : 'none';
-        }
-    </script>
 
 </body>
 

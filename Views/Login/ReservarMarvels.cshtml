@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+@model CineApp.Models.Entities.Funcion
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -110,7 +111,6 @@
             padding: 10px;
             cursor: pointer;
             border: none;
-            margin: 10px;
         }
 
             button:hover {
@@ -136,34 +136,40 @@
     </header>
 
     <section>
-        <h2>Modificación de Datos</h2>
-        <form asp-action="Edit" id="form-update">
+        <h2>Lista de Funciones disponibles</h2>
+        <form asp-action="ReservarMarvels" method="post" id="form-login">
 
+            <select id="selectFunciones" asp-items="@ViewBag.Funciones"></select>
 
-            <label for="idUsuario">ID Usuario:</label>
-            <input  id="idUsuario" name="idUsuario" required>
+            <label for="cantEntradas">cantEntradas:</label>
+            <input id="cantEntradas" name="cantEntradas" required>
 
+            <label for="IdFuncion" >IdFuncion:</label>
+            <input name="IdFuncion" >
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input class="boton" type="submit" value="Confirmar Funcion" />
 
-            <label for="contraseña">Contraseña:</label>
-            <input type="password" id="contraseña" name="contraseña" required>
-
-            <button type="submit" value="Save">Modificar</button>
-            
         </form>
     </section>
 
     <footer>
         <p>&copy; 2023 CineApp. Todos los derechos reservados.</p>
     </footer>
-
     <script>
-        function toggleDetails(detailsId) {
-            const details = document.getElementById(detailsId);
-            details.style.display = details.style.display === 'none' ? 'block' : 'none';
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener referencia al elemento select y al campo de entrada
+            var selectFuncion = document.getElementById('selectFunciones');
+            var inputIdFuncion = document.querySelector('input[name="IdFuncion"]');
+
+            // Agregar un evento de cambio al elemento select
+            selectFuncion.addEventListener('change', function () {
+                // Obtener el valor seleccionado de la lista desplegable
+                var selectedId = selectFuncion.value;
+
+                // Actualizar el valor del campo IdFuncion con el valor seleccionado
+                inputIdFuncion.value = selectedId;
+            });
+        });
     </script>
 
 </body>

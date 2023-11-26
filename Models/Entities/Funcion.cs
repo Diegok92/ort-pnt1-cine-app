@@ -15,7 +15,7 @@ namespace CineApp.Models.Entities
 
         public override string ToString()
         {
-            return $"{NombrePelicula} - Butacas disponibles: " + cantButacasDisponibles()+ $" {Dia} - {Horario}";
+            return $"{NombrePelicula} - Butacas disponibles: " + cantButacasDisponibles()+ $" - {Dia} - {Horario}hs";
         }
 
         public int cantButacasDisponibles()
@@ -23,8 +23,14 @@ namespace CineApp.Models.Entities
             return ButacasTotales - ButacasVendidas;
 
         }
+        public Boolean mismoNombrePelicula(string nombre)
+        {
+            return NombrePelicula.Equals(nombre);
+        }
+        public void venderEntradas(int cant)  {   this.ButacasVendidas += cant;  }
 
+        public Boolean quedanEntradasSuficientes(int cant) { return this.cantButacasDisponibles()>=cant; }
     }
 
-
+       
 }

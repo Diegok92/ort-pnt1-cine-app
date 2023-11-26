@@ -24,6 +24,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/crist/OneDrive/Escritorio/Facultad/TP PNT1/TPactualizado/ort-pnt1-cine-app/Views/Login/CompraExitosa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQ29tcHJhRXhpdG9zYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/crist/OneDrive/Escritorio/Facultad/TP PNT1/TPactualizado/ort-pnt1-cine-app/Views/Login/CompraFallida.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQ29tcHJhRmFsbGlkYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/crist/OneDrive/Escritorio/Facultad/TP PNT1/TPactualizado/ort-pnt1-cine-app/Views/Login/CrearReserva.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQ3JlYXJSZXNlcnZhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -36,8 +44,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/crist/OneDrive/Escritorio/Facultad/TP PNT1/TPactualizado/ort-pnt1-cine-app/Views/Login/ReservarSpiderman.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUmVzZXJ2YXJTcGlkZXJtYW4uY3NodG1s
+[C:/Users/crist/OneDrive/Escritorio/Facultad/TP PNT1/TPactualizado/ort-pnt1-cine-app/Views/Login/ReservarMarvels.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUmVzZXJ2YXJNYXJ2ZWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/crist/OneDrive/Escritorio/Facultad/TP PNT1/TPactualizado/ort-pnt1-cine-app/Views/Shared/Error.cshtml]
