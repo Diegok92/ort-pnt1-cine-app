@@ -1,11 +1,8 @@
-@{
-    Layout = null;
-}
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CineApp</title>
     <style>
@@ -113,6 +110,7 @@
             padding: 10px;
             cursor: pointer;
             border: none;
+            margin: 10px;
         }
 
             button:hover {
@@ -138,25 +136,26 @@
     </header>
 
     <section>
-        <h2>Ingrese para reservar su lugar!</h2>
-        <form id="form-login">
+        
+        <h2>¡Ingrese para reservar su lugar!</h2>
+        <a href="http://localhost:5206/Login">
+            <button type="button">Ingresar</button>
+        </a>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+        
+        <h3>¿No estás registrado? ¡No pasa nada!</h3>
+        <a href="http://localhost:5206/Usuario/Create">
+            <button type="button">Registrarse</button>
+        </a>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="submit">Ingresar</button>
-        </form>
     </section>
-   
+
     <h2>Cartelera</h2>
     <h4>Pase el mouse por los poster para ver las sinopsis!</h4>
     <section class="cartelera">
         <div class="movie">
             <h2>The Marvels</h2>
-            <img class="poster" src="https://i.redd.it/i-made-a-poster-for-the-marvels-how-excited-are-you-guys-v0-j9glw1siky9b1.jpg?s=9fceb4d8a3bfb88b9f05352abb87b0c9b0cdd0a5" alt="The Marvels">
+            <img class="poster" src="Images/PosterMarvels.jpg" alt="The Marvels">
             <p>Fecha de estreno: 10/11/23</p>
             <p>Clasificacion: PG-13</p>
             <div class="movie-details" id="marvels-details">
@@ -166,7 +165,7 @@
 
         <div class="movie">
             <h2>Napoleon</h2>
-            <img class="poster" src="https://pbs.twimg.com/media/F9OB2rKXoAAQ4Rm?format=jpg&name=900x900" alt="Napoleon">
+            <img class="poster" src="Images/PosterNapoleon.jpg" alt="Napoleon">
             <p>Fecha de estreno: 22/11/23<p>
             <p>Clasificacion: PG-16</p>
             <div class="movie-details" id="napoleon-details">
@@ -176,7 +175,7 @@
 
         <div class="movie">
             <h2>El Exorcista: Creyentes</h2>
-            <img class="poster" src="https://pics.filmaffinity.com/the_exorcist_believer-559498509-large.jpg" alt="El Exorcista: Creyentes">
+            <img class="poster" src="Images/PosterExorcist.jpg" alt="El Exorcista: Creyentes">
             <p>Fecha de estreno: 05/10/23<p>
             <p>Clasificacion: PG-13</p>
             <div class="movie-details" id="exorcista-details">
@@ -186,17 +185,17 @@
 
         <div class="movie">
             <h2>El Justiciero 3</h2>
-            <img class="poster" src="https://www.cartelera.com.uy/imagenes_espectaculos/moviedetail13/35268.jpg" alt="El Justiciero 3">
+            <img class="poster" src="Images/PosterEqualizer3.jpg" alt="El Justiciero 3">
             <p>Fecha de estreno: 21/09/23<p>
             <p>Clasificacion: PG-16</p>
             <div class="movie-details" id="justiciero3-details">
-                <p>EL JUSTICIERO: CAPITULO FINAL. Desde que renuncio a su vida como asesino del gobierno, Robert McCall (Denzel Washington) ha luchado por reconciliarse con las horribles cosas que hizo en el pasado y encuentra un extraño consuelo en servir a la justicia en nombre de los oprimidos. Encontrandose sorpresivamente en su casa en el sur de Italia, descubre que sus nuevos amigos estan bajo el control de los jefes del crimen local. Cuando los acontecimientos se tornan mortales, McCall sabe lo que tiene que hacer: convertirse en el protector de sus amigos enfrentandose a la mafia.</p>
+                <p>L JUSTICIERO: CAPÍTULO FINAL. Desde que renunció a su vida como asesino del gobierno, Robert McCall (Denzel Washington) ha luchado por reconciliarse con las horribles cosas que hizo en el pasado y encuentra un extraño consuelo en servir a la justicia en nombre de los oprimidos. Encontrándose sorpresivamente en su casa en el sur de Italia, descubre que sus nuevos amigos están bajo el control de los jefes del crimen local. Cuando los acontecimientos se tornan mortales, McCall sabe lo que tiene que hacer: convertirse en el protector de sus amigos enfrentándose a la mafia.</p>
             </div>
         </div>
 
         <div class="movie">
             <h2>Los juegos del Hambre: La Balada de Pajaros Cantores y Serpientes</h2>
-            <img class="poster" src="https://i.blogs.es/fb9c44/balada-de-pajaros-cantores-y-serpientes/1366_2000.jpg" alt="Los juegos del Hambre: La Balada de Pajaros Cantores y Serpientes">
+            <img class="poster" src="Images/PosterHungerGames.jpg" alt="Los juegos del Hambre: La Balada de Pajaros Cantores y Serpientes">
             <p>Fecha de estreno: 05/10/23<p>
             <p>Clasificacion: PG-13</p>
             <div class="movie-details" id="juegoHambre-details">
@@ -206,34 +205,33 @@
 
         <div class="movie">
             <h2>Atentado en el Aire</h2>
-            <img class="poster" src="https://pics.filmaffinity.com/97_minutos-191267558-large.jpg" alt="atentado en el aire">
+            <img class="poster" src="Images/Poster97minutes.jpg" alt="atentado en el aire">
             <p>Fecha de estreno: 09/11/23<p>
             <p>Clasificacion: PG-13</p>
             <div class="movie-details" id="atentadoAire-details">
-                <p>Un 767 secuestrado se estrellara en solo 97 minutos cuando se le acabe el combustible. Contra la fuerte voluntad del vice director de la NSA Toyin, el director de la NSA, Hawkins, se prepara para derribar el avion antes de que cause datos catastroficos en tierra, dejando el destino de los pasajeros inocentes en manos de Alex, un agente encubierto de Interpol que ha sido incorporado en la celula terrorista.</p>
+                <p>Un 767 secuestrado se estrellará en sólo 97 minutos cuando se le acabe el combustible. Contra la fuerte voluntad del vice director de la NSA Toyin, el director de la NSA, Hawkins, se prepara para derribar el avión antes de que cause daños catastróficos en tierra, dejando el destino de los pasajeros inocentes en manos de Alex, un agente encubierto de Interpol que ha sido incorporado en la célula terrorista.</p>
             </div>
         </div>
 
         <div class="movie">
             <h2>Trolls 3</h2>
-            <img class="poster" src="https://loquiero.ar/wp-content/uploads/2021/09/Trolls-3-Afiche.jpg" alt="trolls 3">
+            <img class="poster" src="Images/Postertrolls3.jpg" alt="trolls 3">
             <p>Fecha de estreno: 17/11/23<p>
             <p>Clasificacion: ATP</p>
             <div class="movie-details" id="trolls3-details">
-                <p>Despues de dos peliculas de verdadera amistad y constante coqueteo, Poppy (Anna Kendrick) y Ramon (Justin Timberlake) son ahora oficialmente, y por fin, una pareja! A medida que se conocen mas, Poppy descubre que Ramon tiene un pasado secreto. En el pasado fue parte de su boyband favorita, BroZone, con sus cuatro hermanos: Floyd (Troye Sivan, la sensacion del electropop nominado al Globo de Oro) John Dory (Eric Andr; Sing 2: Ven y canta de nuevo!), Spruce (Daveed Diggs, ganador del Grammy; Hamilton) y Clay (Kid Cudi, ganador del Grammy; No mires arriba). BroZone se desintegra cuando Ramon apenas era un niño, y al igual que su familia, no ha vuelto a ver a sus hermanos desde entonces. Pero cuando Floyd, el hermano de Ramon, es secuestrado por sus talentos musicales por un par de unos malvados villanos pop-stars - Velvet (Amy Schumer, ganadora del Emmy; Esta chica es un desastre) y Veneer (Andrew Rannells, ganador del Grammy y nominado al Tony; The Book of Mormon) - Ramon y Poppy se embarcan en un viaje estremecedor y emocional para reunir a los otros hermanos y asi rescatar a Floyd, de un destino aun peor, que el olvido de la cultura pop.</p>
+                <p>Después de dos películas de verdadera amistad y constante coqueteo, Poppy (Anna Kendrick) y Ramón (Justin Timberlake) son ahora oficialmente, y por fin, ¡una pareja! A medida que se conocen más, Poppy descubre que Ramón tiene un pasado secreto. En el pasado fue parte de su boyband favorita, BroZone, con sus cuatro hermanos: Floyd (Troye Sivan, la sensación del electropop nominado al Globo de Oro) John Dory (Eric André; Sing 2: ¡Ven y canta de nuevo!), Spruce (Daveed Diggs, ganador del Grammy; Hamilton) y Clay (Kid Cudi, ganador del Grammy; No mires arriba). BroZone se desintegró cuando Ramón apenas era un niño, y al igual que su familia, no ha vuelto a ver a sus hermanos desde entonces. Pero cuando Floyd, el hermano de Ramón, es secuestrado por sus talentos musicales por un par de unos malvados villanos pop-stars - Velvet (Amy Schumer, ganadora del Emmy; Esta chica es un desastre) y Veneer (Andrew Rannells, ganador del Grammy y nominado al Tony; The Book of Mormon) - Ramón y Poppy se embarcan en un viaje estremecedor y emocional para reunir a los otros hermanos y así rescatar a Floyd, de un destino aún peor, que el olvido de la cultura pop.</p>
             </div>
         </div>
 
-       <div class="movie">
+        <div class="movie">
             <h2>Asesinos de la Luna</h2>
-            <img class="poster" src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781398513341/killers-of-the-flower-moon-9781398513341_hr.jpg" alt="Asesinos de la Luna">
-            <p>Fecha de estreno: 20/10/23</p>
-            <p>Clasificación: PG-16</p>
+            <img class="poster" src="Images/PosterAsesinosLuna.jpg" alt="Asesinos de la Luna">
+            <p>Fecha de estreno: 20/10/23<p>
+            <p>Clasificacion: PG-16</p>
             <div class="movie-details" id="asesinosLuna-details">
                 <p>Basada en el elogiado bestseller de David Grann, "Killers of the Flower Moon" está ambientada en la década de 1920 en Oklahoma y cuenta la historia de los asesinatos en serie de miembros de la Nación Osage, un pueblo originario rico en petróleo. Una serie de crímenes brutales que llegaron a conocerse como el Reino del terror.</p>
             </div>
         </div>
-  
 
     </section>
 

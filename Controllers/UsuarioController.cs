@@ -51,12 +51,12 @@ namespace CineApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdUsuario,Email,Contraseña")] Usuario usuario)
+        public IActionResult Create([Bind("Email,Contraseña")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(usuario);
-                await _context.SaveChangesAsync();
+                _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             return View(usuario);

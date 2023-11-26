@@ -136,20 +136,23 @@
     </header>
 
     <section>
-        <h2>Lista de Funciones disponibles</h2>
+        <h2>Lista de Funciones Disponibles</h2>
         <form asp-action="ReservarMarvels" method="post" id="form-login">
 
             <select id="selectFunciones" asp-items="@ViewBag.Funciones"></select>
 
-            <label for="cantEntradas">cantEntradas:</label>
+            <label for="cantEntradas">Cantidad de Entradas:</label>
             <input id="cantEntradas" name="cantEntradas" required>
 
-            <label for="IdFuncion" >IdFuncion:</label>
-            <input name="IdFuncion" >
+            <input name="IdFuncion" style="display: none">
 
             <input class="boton" type="submit" value="Confirmar Funcion" />
 
+
+
         </form>
+        <h2>Trailer:</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/_8ylSrn3SJY?si=Xkn2eujsrqGw1mwG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </section>
 
     <footer>
@@ -164,8 +167,9 @@
             // Agregar un evento de cambio al elemento select
             selectFuncion.addEventListener('change', function () {
                 // Obtener el valor seleccionado de la lista desplegable
-                var selectedId = selectFuncion.value;
-
+              
+                var selectedId = selectFuncion.value.slice(0,2);
+            
                 // Actualizar el valor del campo IdFuncion con el valor seleccionado
                 inputIdFuncion.value = selectedId;
             });

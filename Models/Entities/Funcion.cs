@@ -15,7 +15,7 @@ namespace CineApp.Models.Entities
 
         public override string ToString()
         {
-            return $"{NombrePelicula} - Butacas disponibles: " + cantButacasDisponibles()+ $" - {Dia} - {Horario}hs";
+            return $"{IdFuncion} - {NombrePelicula} - Butacas disponibles: " + cantButacasDisponibles()+ $" - {Dia} - {Horario}hs";
         }
 
         public int cantButacasDisponibles()
